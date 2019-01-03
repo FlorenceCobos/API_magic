@@ -24,6 +24,7 @@ document.querySelector('.magic').addEventListener('click', function(){
         })
         .then(function(boon){
            let cartes = boon.cards
+           document.querySelector('.global').innerHTML=""
            cartes.forEach(function(element) {
             document.querySelector('.global').innerHTML += '<div class= "cartes">' +  '<h1>' + element.name + '</h1>'
             + '<img src= "' + element.imageUrl + '">' + "<p>" + element.type + "</p>" + '</div>'
@@ -36,6 +37,30 @@ document.querySelector('.magic').addEventListener('click', function(){
     }
     cards(2);
 })
+document.querySelector('.magic2').addEventListener('click', function(){
+   let cards = function getCards($number){
+    fetch("http://api.magicthegathering.io/v1/cards?page="+ $number + '/')
+    .then(function(response){ 
+        return response.json();
+        })
+        .then(function(boon){
+           let cartes = boon.cards
+           document.querySelector('.global').innerHTML=""
+           cartes.forEach(function(element) {
+            document.querySelector('.global').innerHTML += '<div class= "cartes">' +  '<h1>' + element.name + '</h1>'
+            + '<img src= "' + element.imageUrl + '">' + "<p>" + element.type + "</p>" + '</div>'
+             
+          });
+          
+           
+            
+        })
+    }
+    cards(3);
+})
+
+
+
 
 //JQUERY
 
