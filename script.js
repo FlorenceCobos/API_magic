@@ -18,7 +18,7 @@ pokemon(6);
 
 document.querySelector('.magic').addEventListener('click', function(){
    let cards = function getCards($number){
-    fetch("http://api.magicthegathering.io/v1/cards?page="+ $number + '/')
+    fetch("https://api.magicthegathering.io/v1/cards?page="+ $number + '/')
     .then(function(response){ 
         return response.json();
         })
@@ -39,7 +39,7 @@ document.querySelector('.magic').addEventListener('click', function(){
 })
 document.querySelector('.magic2').addEventListener('click', function(){
    let cards = function getCards($number){
-    fetch("http://api.magicthegathering.io/v1/cards?page="+ $number + '/')
+    fetch("https://api.magicthegathering.io/v1/cards?page="+ $number + '/')
     .then(function(response){ 
         return response.json();
         })
